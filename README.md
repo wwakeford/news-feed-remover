@@ -12,7 +12,7 @@ This enhanced version includes several improvements over the original:
 
 - **Extended Platform Support**: Added filters for Instagram Reels, YouTube Shorts, and other social media distractions
 - **Time Period Blocking**: Smart time-based blocking that activates during specified periods to help with focus
-- **Enhanced Security**: Made it more difficult to accidentally remove the Chrome extension, preventing impulsive disabling
+- **Reduced Impulse**: Made it more difficult to disable lol
 
 ### Supported Platforms
 
