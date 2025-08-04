@@ -21,6 +21,7 @@ const getSettings = (state: SettingsState): Settings.T => {
 		hiddenBuiltinQuotes: state.hiddenBuiltinQuotes,
 		customQuotes: state.customQuotes,
 		sites: state.sites,
+		timeBasedBlocking: state.timeBasedBlocking,
 	};
 };
 
@@ -102,6 +103,7 @@ const loadSettings: BackgroundEffect = (store) => async (action) => {
 			customQuotes: settings.customQuotes,
 			sites,
 			permissions,
+			timeBasedBlocking: settings.timeBasedBlocking,
 		};
 
 		store.dispatch({

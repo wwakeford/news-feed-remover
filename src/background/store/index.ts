@@ -11,6 +11,12 @@ export namespace Settings {
 		hiddenBuiltinQuotes: number[];
 		customQuotes: CustomQuote[];
 		sites: Partial<SitesState>;
+		// Time-based blocking schedule
+		timeBasedBlocking: {
+			enabled: boolean;
+			startHour: number; // 0-23 (24-hour format)
+			endHour: number;   // 0-23 (24-hour format)
+		};
 	};
 
 	export type SitesState = Record<SiteId, SiteState>;
@@ -23,6 +29,11 @@ export namespace Settings {
 		hiddenBuiltinQuotes: [],
 		customQuotes: [],
 		sites: {},
+		timeBasedBlocking: {
+			enabled: false,
+			startHour: 5,  // 5 AM
+			endHour: 18,   // 6 PM
+		},
 	};
 	export const defaultSites = (): SitesState => {
 		const sites: SitesState = {} as SitesState;

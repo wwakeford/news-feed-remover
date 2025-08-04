@@ -94,6 +94,23 @@ function sites(
 	return state || {};
 }
 
+function timeBasedBlocking(
+	state = { enabled: false, startHour: 5, endHour: 18 },
+	action: ActionObject
+) {
+	switch (action.type) {
+		case ActionType.TIME_BASED_BLOCKING_TOGGLE:
+			return { ...state, enabled: !state.enabled };
+		case ActionType.TIME_BASED_BLOCKING_UPDATE_HOURS:
+			return { 
+				...state, 
+				startHour: action.startHour, 
+				endHour: action.endHour 
+			};
+	}
+	return state;
+}
+
 export type SettingsState = {
 	showQuotes: boolean;
 	builtinQuotesEnabled: boolean;
@@ -102,6 +119,11 @@ export type SettingsState = {
 	customQuotes: CustomQuote[];
 	sites: Record<SiteId, Settings.SiteState>;
 	permissions: Permissions;
+	timeBasedBlocking: {
+		enabled: boolean;
+		startHour: number;
+		endHour: number;
+	};
 };
 
 export type BackgroundState =
@@ -119,6 +141,7 @@ const settingsReducer = combineReducers({
 	customQuotes,
 	sites,
 	permissions,
+	timeBasedBlocking,
 });
 
 export default (

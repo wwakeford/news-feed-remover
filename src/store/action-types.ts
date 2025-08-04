@@ -115,7 +115,7 @@ export type QuoteBulkParseError = {
 
 export type UiOptionsTabShow = {
 	type: ActionType.UI_OPTIONS_TAB_SHOW;
-	tab: 'sites' | 'quotes' | 'about';
+	tab: 'sites' | 'quotes' | 'about' | 'schedule';
 };
 export type UiOptionsQuoteTabShow = {
 	type: ActionType.UI_OPTIONS_QUOTE_TAB_SHOW;

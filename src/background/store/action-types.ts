@@ -18,6 +18,8 @@ export enum BackgroundActionType {
 	PERMISSIONS_UPDATE = 'permissions/update',
 	SITES_SET_STATE = 'sites/set_state',
 	CONTENT_SCRIPTS_REGISTER = 'content_scripts/register',
+	TIME_BASED_BLOCKING_TOGGLE = 'TIME_BASED_BLOCKING_TOGGLE',
+	TIME_BASED_BLOCKING_UPDATE_HOURS = 'TIME_BASED_BLOCKING_UPDATE_HOURS',
 }
 
 export type BackgroundActionObject =
@@ -34,7 +36,9 @@ export type BackgroundActionObject =
 	| PermissionsCheck
 	| PermissionsUpdate
 	| SitesSetState
-	| ContentScriptsRegister;
+	| ContentScriptsRegister
+	| TimeBasedBlockingToggle
+	| TimeBasedBlockingUpdateHours;
 
 export type FeatureIncrement = { type: BackgroundActionType.FEATURE_INCREMENT };
 
@@ -90,4 +94,14 @@ export type SitesSetState = {
 };
 export type ContentScriptsRegister = {
 	type: BackgroundActionType.CONTENT_SCRIPTS_REGISTER;
+};
+
+export type TimeBasedBlockingToggle = {
+	type: BackgroundActionType.TIME_BASED_BLOCKING_TOGGLE;
+};
+
+export type TimeBasedBlockingUpdateHours = {
+	type: BackgroundActionType.TIME_BASED_BLOCKING_UPDATE_HOURS;
+	startHour: number;
+	endHour: number;
 };

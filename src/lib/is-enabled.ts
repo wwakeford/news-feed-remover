@@ -5,6 +5,7 @@ import {
 	SiteStatusTag,
 	SiteStatus,
 } from '../background/store/sites/selectors';
+import { isCurrentTimeInRange } from './time';
 
 export type EnabledStatus =
 	| { type: 'enabled' }
@@ -30,6 +31,19 @@ export function enabledStatus(state: SettingsState): EnabledStatus {
 				return { type: 'disabled' };
 			} else if (siteStatus.type === SiteStatusTag.DISABLED_TEMPORARILY) {
 				return { type: 'disabled-temporarily', until: siteStatus.until };
+			}
+
+			// Check time-based blocking schedule
+			if (state.timeBasedBlocking.enabled) {
+				const isInBlockingHours = isCurrentTimeInRange(
+					state.timeBasedBlocking.startHour,
+					state.timeBasedBlocking.endHour
+				);
+				
+				// If time-based blocking is enabled and we're NOT in blocking hours, disable
+				if (!isInBlockingHours) {
+					return { type: 'disabled' };
+				}
 			}
 
 			return { type: 'enabled' };

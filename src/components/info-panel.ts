@@ -3,6 +3,7 @@ import QuoteOptions from './quote-options';
 import { Store } from '../store';
 import { UiOptionsTabShow, ActionType } from '../store/action-types';
 import { SitesOptions } from './sites-options';
+import { ScheduleOptions } from './schedule-options';
 
 const Heading = () => {
 	return h('h3.text-center', 'News Feed Eradicator');
@@ -130,6 +131,8 @@ const CurrentTab = (store: Store) => {
 			return SitesOptions(store);
 		case 'quotes':
 			return QuoteOptions(store);
+		case 'schedule':
+			return ScheduleOptions(store);
 		case 'about':
 			return About();
 	}
@@ -158,6 +161,7 @@ const InfoPanel = (store: Store) => {
 			h('div.flex.justify-center.h-stack-2', [
 				Tab('sites', 'Sites'),
 				Tab('quotes', 'Quotes'),
+				Tab('schedule', 'Schedule'),
 				Tab('about', 'About'),
 			]),
 
