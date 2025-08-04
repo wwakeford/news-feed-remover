@@ -1,11 +1,29 @@
-# News Feed Eradicator
+# News Feed Eradicator (Enhanced)
 
-A browser extension that deletes your Facebook news feed
-and replaces it with a nice quote.
+A browser extension that deletes your social media news feeds and replaces them with nice quotes.
 
-[Install Chrome Extension](https://chrome.google.com/webstore/detail/news-feed-eradicator-for/fjcldmjmjhkklehbacihaiopjklihlgg?hl=en)
+## About This Fork
 
-[Install Firefox Add-on](https://addons.mozilla.org/en-US/firefox/addon/news-feed-eradicator/)
+This project is based on the excellent [News Feed Eradicator](https://github.com/jordwest/news-feed-eradicator) by [@jordwest](https://github.com/jordwest). 
+
+### ✨ Enhanced Features
+
+This enhanced version includes several improvements over the original:
+
+- **Extended Platform Support**: Added filters for Instagram Reels, YouTube Shorts, and other social media distractions
+- **Time Period Blocking**: Smart time-based blocking that activates during specified periods to help with focus
+- **Enhanced Security**: Made it more difficult to accidentally remove the Chrome extension, preventing impulsive disabling
+
+### Supported Platforms
+
+- Facebook (news feed, marketplace, groups, gaming)
+- Instagram (feed and reels)
+- Twitter/X (timeline)
+- YouTube (home feed and trending)
+- LinkedIn (feed)
+- Reddit (popular feeds)
+- Hacker News
+- GitHub (dashboard)
 
 ![Screenshot](https://raw.githubusercontent.com/jordwest/news-feed-eradicator/master/assets/screenshot.jpg)
 
